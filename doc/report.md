@@ -29,7 +29,7 @@ The program will need to be able to save and retrieve user tasks from the save f
 the users will be prompted with a **text based terminal menu** to add any task they may wish to add, the menu will be defined and designed in the successive sections of this document. The menu will be designed to allow users to access all the features of the final product.
 
 ```
-The program will need to be able to add, update and view tasks  
+The program will need to be able to add, update and view tasks
 ```
 The saving function will be independent than the remaining features
 
@@ -121,3 +121,13 @@ The task will be saved in a CSV file in much the same manner:
 id; task title; notes; deadline; urgency; progress;
 #1; groceries; make sure to get milk; 21st November; 1; on my way
 ```
+
+
+**report needs the following**:
+
+The documentation you will need to submit in addition to all source code, should be as follows:
+•	Brief description of the aims of program
+•	Analysis of the requirements of the program (1-2 pages)
+•	Design – may be documented by flow charts, class diagrams etc. (2-4 pages)
+•	Testing – table of tests to be undertaken to prove that the program achieves its goals (1-2 pages)
+•	Critique – what worked, what didn’t and what could have been improved (up to 1 page)
