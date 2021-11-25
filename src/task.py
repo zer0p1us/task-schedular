@@ -8,3 +8,6 @@ class task(object):
 	description: str = field(default="none")
 	deadline: str = field(default="none")
 	urgency: int = field(default=0)
+
+	def __str__(self):
+        return f"id: {i.id} title: {i.title} description: {i.description}, deadline: {i.deadline}"
