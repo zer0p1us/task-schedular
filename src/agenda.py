@@ -20,4 +20,5 @@ class agenda():
         return self.tasks
 
     def __str__(self):
-        return [for i in self.tasks : i.__str__())]
+        # f = lambda task : task.__str__()
+        return [f.__str__() for f in self.tasks]
