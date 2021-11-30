@@ -32,10 +32,10 @@ def main():
             case 0:
                 break
             case 1:
+                print(_agenda.__str__())
                 pass
             case 2:
                 _agenda.add_task()
-                print(_agenda.__str__())
             case 3:
                 pass
             case _:
