@@ -28,19 +28,16 @@ def main():
             continue
 
 
-        match option:
-            case 0:
-                break
-            case 1:
-                print(_agenda.__str__())
-                pass
-            case 2:
-                _agenda.add_task()
-            case 3:
-                print(_agenda.__str__())
-                pass
-            case _:
-                print(f"option {option} is not available, please chose from the available menu")
+        if option == 0:
+            break
+        elif option == 1:
+            print(_agenda.__str__())
+        elif option == 2:
+            _agenda.add_task()
+        elif option == 3:
+            print(_agenda.__str__())
+        else:
+            print(f"option {option} is not available, please chose from the available menu")
     pass
 
 if __name__ == "__main__":
