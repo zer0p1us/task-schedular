@@ -10,4 +10,4 @@ class task(object):
 	urgency: int = field(default=0)
 
 	def __str__(self):
-        return f"id: {i.id} title: {i.title} description: {i.description}, deadline: {i.deadline}"
+		return f"id: {self.id} title: {self.title} description: {self.description}, deadline: {self.deadline}"
