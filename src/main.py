@@ -37,6 +37,7 @@ def main():
             case 2:
                 _agenda.add_task()
             case 3:
+                print(_agenda.__str__())
                 pass
             case _:
                 print(f"option {option} is not available, please chose from the available menu")
