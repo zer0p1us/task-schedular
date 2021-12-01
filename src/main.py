@@ -7,7 +7,7 @@ def main():
     _agenda = agenda()
     while True:
 
-        # to handle user input erros
+        # to handle user input error 
         try:
             option = input("""
             options:
