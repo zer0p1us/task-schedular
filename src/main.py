@@ -1,13 +1,11 @@
-from types import NoneType
 from task import task
 from agenda import agenda
-import random
 
 def main():
     _agenda = agenda()
     while True:
 
-        # to handle user input error 
+        # to handle user input error
         try:
             option = input("""
             options:
