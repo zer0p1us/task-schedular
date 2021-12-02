@@ -9,9 +9,10 @@ class task(object):
 	deadline: str = field(default="none")
 	urgency: int = field(default=0)
 
-	def __str__(self):
-		"""return task data"""
-		return f"id: {self.id} title: {self.title} description: {self.description}, deadline: {self.deadline}"
 
-	def csv_format(self):
-		return f"{self.id}, {self.title}, {self.description}, {self.deadline}"
+	# def __str__(self):
+	# 	"""return task data"""
+	# 	return f"id: {self.id} title: {self.title} description: {self.description}, deadline: {self.deadline}"
+
+	def __str__(self):
+		return {"id" : self.id, "title": self.title, "description": self.description, "deadline": self.deadline}
