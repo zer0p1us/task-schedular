@@ -13,5 +13,5 @@ class task(object):
 		"""return task data"""
 		return f"id: {self.id} title: {self.title} description: {self.description}, deadline: {self.deadline}"
 
-	def get_csv_format(self):
+	def csv_format(self):
 		return f"{self.id}, {self.title}, {self.description}, {self.deadline}"
