@@ -1,4 +1,7 @@
+from dataclasses import field
+from os import terminal_size
 from task import task
+import csv
 class agenda():
     tasks = []
 
@@ -24,3 +27,16 @@ class agenda():
     def __str__(self):
         """return tasks in agenda"""
         return [f.__str__() for f in self.tasks]
+
+    def save_agenda(self, file_path="agenda.csv"):
+        fields = ["id", "title", "description", "deadline", "urgency"]
+        with open(file_path, "w")as csv_file:
+            # agenda_file = csv.writer(csv_file, delimiter=',', quotechar='\"', quoting=csv.QUOTE_MINIMAL)
+            agenda_file = csv.DictWriter(csv_file, fieldnames=fields, delimiter=',', lineterminator='\r')
+            agenda_file.writeheader()
+            agenda_file.writerows([f.__str__() for f in self.tasks])
+            csv_file.close()
+
+    def load_agenda(self, file_name):
+        file = open(file_name)
+        return file
