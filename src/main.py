@@ -7,14 +7,12 @@ def main():
 
         # to handle user input error
         try:
-            option = input("""
-            options:
-
-            0: Quit
-            1: View tasks
-            2: Add new entry to the schedule
-            3: Update entry
-            """)
+            option = input(
+            "option:\n"+
+            "\t0: Quit\n"+
+            "\t1: View tasks\n"+
+            "\t2: Add new entry to the schedule\n"+
+            "\t3: Update entry\n"+)
             option = int(option) #do not touch, try&except needs option to initialise to sort error
         except ValueError:
             # input is empty
