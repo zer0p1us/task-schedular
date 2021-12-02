@@ -12,7 +12,7 @@ def main():
             "\t0: Quit\n"+
             "\t1: View tasks\n"+
             "\t2: Add new entry to the schedule\n"+
-            "\t3: Update entry\n"+)
+            "\t3: Update entry\n")
             option = int(option) #do not touch, try&except needs option to initialise to sort error
         except ValueError:
             # input is empty
@@ -25,6 +25,7 @@ def main():
 
 
         if option == 0:
+            _agenda.save_agenda()
             break
         elif option == 1:
             print(_agenda.__str__())
