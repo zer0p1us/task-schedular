@@ -9,6 +9,7 @@ class agenda():
             self.tasks = tasks
 
     def add_task(self):
+        """add new task to agenda"""
         self.tasks.append(task(
             input("please enter a task title: "),
             input("please enter a task description: "),
@@ -17,8 +18,9 @@ class agenda():
         pass
 
     def get_tasks(self):
+        """return tasks array"""
         return self.tasks
 
     def __str__(self):
-        # f = lambda task : task.__str__()
+        """return tasks in agenda"""
         return [f.__str__() for f in self.tasks]

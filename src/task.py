@@ -10,4 +10,5 @@ class task(object):
 	urgency: int = field(default=0)
 
 	def __str__(self):
+		"""return task data"""
 		return f"id: {self.id} title: {self.title} description: {self.description}, deadline: {self.deadline}"
