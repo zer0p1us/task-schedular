@@ -34,7 +34,7 @@ class agenda():
             # agenda_file = csv.writer(csv_file, delimiter=',', quotechar='\"', quoting=csv.QUOTE_MINIMAL)
             agenda_file = csv.DictWriter(csv_file, fieldnames=fields, delimiter=',', lineterminator='\r')
             agenda_file.writeheader()
-            agenda_file.writerows([f.__str__() for f in self.tasks])
+            agenda_file.writerows([f.save_format() for f in self.tasks])
             csv_file.close()
 
     def load_agenda(self, file_name):
