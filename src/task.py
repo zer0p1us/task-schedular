@@ -1,18 +1,24 @@
-from dataclasses import dataclass, field
+from dataclasses import dataclass, field, fields
 import random
+from datetime import datetime
 
 @dataclass(init=True)
-class task(object):
-	id: int = field(default=random.randint(0, 1000))
+class task():
 	title: str = field(default="none")
 	description: str = field(default="none")
-	deadline: str = field(default="none")
+	deadline: int = field(default="none")
 	urgency: int = field(default=0)
+	progress: str = field(default="in progress")
+	fields = ["title", "description", "deadline", "urgency", "smart_urgency"]
 
 
 	def __str__(self):
 		"""return task data"""
-		return f"\nid: {self.id} \ntitle: {self.title} \ndescription: {self.description} \ndeadline: {self.deadline}"
+		return f"\ntitle: {self.title} \ndescription: {self.description} \ndeadline: {self.deadline} \nurgency: {self.urgency} \nsmart urgency: {self.smart_urgency_calc()}"
 
 	def save_format(self):
-		return {"id" : self.id, "title": self.title, "description": self.description, "deadline": self.deadline}
+		return {"title": self.title, "description": self.description, "deadline": self.deadline, "urgency": self.urgency, "smart_urgency": self.smart_urgency_calc()}
+
+	def smart_urgency_calc(self) -> int:
+		"""calculates the urgency of a task based on time till deadline and urgency value"""
+		return ((self.urgency) * (self.deadline / datetime.now().timestamp()))
