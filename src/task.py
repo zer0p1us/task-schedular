@@ -17,6 +17,7 @@ class task():
 		return f"\ntitle: {self.title} \ndescription: {self.description} \ndeadline: {self.deadline} \nurgency: {self.urgency} \nsmart urgency: {self.smart_urgency_calc()}"
 
 	def save_format(self):
+		"""return dict of attributes for save format"""
 		return {"title": self.title, "description": self.description, "deadline": self.deadline, "urgency": self.urgency, "smart_urgency": self.smart_urgency_calc()}
 
 	def smart_urgency_calc(self) -> int:
