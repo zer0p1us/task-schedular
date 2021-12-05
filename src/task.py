@@ -23,26 +23,26 @@ class task():
 
 		# convert string types from save files to appropriate types
 		try:
-			self.deadline = int(self.deadline)
+			self.deadline_timestamp = int(self.deadline_timestamp)
 			self.urgency = int(self.urgency)
 		except TypeError:
 			print("incorrect data types have been set in ")
 
 		# compute deadline date
-		self.deadline_date = datetime.fromtimestamp(self.deadline)
+		self.deadline_date = datetime.fromtimestamp(self.deadline_timestamp)
 
 	def __str__(self):
 		"""return task data"""
-		return f"\ntitle: {self.title} \ndescription: {self.description} \ndeadline: {datetime.fromtimestamp(self.deadline)} \nurgency: {self.urgency} \nsmart urgency: {self.smart_urgency_calc()} \nprogress: {self.progress}"
+		return f"\ntitle: {self.title} \ndescription: {self.description} \ndeadline: {self.deadline_date} \nurgency: {self.urgency} \nsmart urgency: {self.smart_urgency_calc()} \nprogress: {self.progress}"
 
 	def save_format(self):
 		"""return dict of attributes for save format"""
-		return {"title": self.title, "description": self.description, "deadline": self.deadline_timestamp, "urgency": self.urgency, "progress": self.progress}
+		return {"title": self.title, "description": self.description, "deadline_timestamp": self.deadline_timestamp, "urgency": self.urgency, "progress": self.progress}
 
 	def smart_urgency_calc(self) -> int:
 		"""calculates the urgency of a task based on time till deadline and urgency value"""
 		try:
-			return (int(self.urgency) * (int(self.deadline) / datetime.now().timestamp()))
+			return (int(self.urgency) * (int(self.deadline_timestamp) / datetime.now().timestamp()))
 		except:
 			print("failed to calculate smart urgency")
 			return 0
