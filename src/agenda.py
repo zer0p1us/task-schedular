@@ -12,8 +12,13 @@ class agenda():
 		else:
 			self.tasks = tasks
 
-	def add_task(self):
+	def add_task(self, task_values=[]):
 		"""add new task to agenda"""
+		if task_values != []:
+			self.tasks.append(task(*task_values))
+			# map(lambda p: self.tasks.append(task(p, p, )), task_values)
+			pass
+		else:
 		deadline = util.date_parcing()
 		self.tasks.append(task(
 			title = input("please enter a task title: "),
