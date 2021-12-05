@@ -1,8 +1,8 @@
-from dataclasses import field
-import dataclasses
+from dataclasses import dataclass, field
 from task import task
 import csv
 from util import *
+import operator
 class agenda():
 	tasks = []
 
@@ -24,8 +24,11 @@ class agenda():
 				description = input("please enter a task description: "),
 				deadline_timestamp = deadline,
 				urgency = input("please enter a task urgency level (0-4), lower level is higher urgency: ")))
-			pass
+		self.order_tasks()
 
+	def order_tasks(self):
+		"""order task list according to smart_urgency of each task"""
+		self.tasks = sorted(self.tasks, key=operator.attrgetter("smart_urgency"), reverse=True)
 
 	def __str__(self):
 		"""return tasks in agenda"""
