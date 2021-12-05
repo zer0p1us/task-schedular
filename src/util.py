@@ -11,6 +11,7 @@ class util:
 		except ValueError:
 			print("Error: the date entered is invalid, the deadline will be provisionally set to current time, please update in duetime")
 			return datetime.now().timestamp()
+		raw_hour = input("please enter the hour (hh:mm): ")
 		if not raw_hour:
 			return int(datetime(year=year, month=month, day=day).timestamp())
 		else:
