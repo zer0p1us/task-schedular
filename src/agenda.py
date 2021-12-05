@@ -56,5 +56,5 @@ class agenda():
 	def table(self):
 		print ("{:^8} {:^8} {:^20} {:^20} {:^10} {:^10}".format("index", "title", "description", "deadline", "urgency", "progress"))
 		for index, task_attributes in enumerate(self.tasks):
-			print ("{:^8} {:^8} {:^20} {:^20} {:^10} {:^10}".format(index, task_attributes.title, task_attributes.description, str(task_attributes.deadline_date), task_attributes.urgency, task_attributes.progress))
+			print (f"{index:^8} {task_attributes.title:^8} {task_attributes.description:^20} {task_attributes.deadline_date:^20} {task_attributes.urgency:^10} {task_attributes.progress:^10}")
 			pass
