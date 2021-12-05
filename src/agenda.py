@@ -46,7 +46,6 @@ class agenda():
 			with open(file_name, "r") as csv_file:
 				agenda_file = csv.DictReader(csv_file)
 				for line in agenda_file:
-					print(dict(line).values())
 					self.add_task(dict(line).values())
 		except FileNotFoundError:
 			print("not valid agenda.csv files were found, new agenda.csv file will be created with the new tasks")
