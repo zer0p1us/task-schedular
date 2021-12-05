@@ -3,6 +3,7 @@ from agenda import agenda
 
 def main():
 	_agenda = agenda()
+	_agenda.table() if len(_agenda.tasks) != 0 else print("no tasks present")
 	while True:
 
 		# to handle user input error
