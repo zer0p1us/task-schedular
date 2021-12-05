@@ -28,7 +28,6 @@ class agenda():
 		return [f.__str__() for f in self.tasks]
 
 	def save_agenda(self, file_path="agenda.csv"):
-		fields = ["id", "title", "description", "deadline", "urgency"]
 		with open(file_path, "w")as csv_file:
 			agenda_file = csv.DictWriter(csv_file, fieldnames=task.fields, delimiter=',', lineterminator='\r')
 			agenda_file.writeheader()
