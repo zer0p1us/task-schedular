@@ -6,11 +6,11 @@ from datetime import datetime
 class task():
 	title: str = field(default="none")
 	description: str = field(default="none")
-	deadline: int = field(default="none")
+	deadline_timestamp: int = field(default="none")
 	urgency: int = field(default=1)
 	progress: str = field(default="in progress")
-	smart_urgency = 0 
-	save_attributes = ["title", "description", "deadline", "urgency", "progress"] # stores attributes to be saved
+	deadline_date = None # will not be saved but compute
+	save_attributes = ["title", "description", "deadline_timestamp", "urgency", "progress"] # stores attributes to be saved
 
 	def __post_init__(self):
 		# attribute sanitation
@@ -27,6 +27,8 @@ class task():
 		except TypeError:
 			print("incorrect data types have been set in ")
 
+		# compute deadline date
+		self.deadline_date = datetime.fromtimestamp(self.deadline)
 
 	def __str__(self):
 		"""return task data"""
@@ -34,7 +36,7 @@ class task():
 
 	def save_format(self):
 		"""return dict of attributes for save format"""
-		return {"title": self.title, "description": self.description, "deadline": self.deadline, "urgency": self.urgency, "progress": self.progress}
+		return {"title": self.title, "description": self.description, "deadline": self.deadline_timestamp, "urgency": self.urgency, "progress": self.progress}
 
 	def smart_urgency_calc(self) -> int:
 		"""calculates the urgency of a task based on time till deadline and urgency value"""

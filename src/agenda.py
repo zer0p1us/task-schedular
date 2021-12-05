@@ -24,7 +24,7 @@ class agenda():
 			self.tasks.append(task(
 				title = input("please enter a task title: "),
 				description = input("please enter a task description: "),
-				deadline = deadline,
+				deadline_timestamp = deadline,
 				urgency = input("please enter a task urgency level (0-4), lower level is higher urgency: ")))
 			pass
 
