@@ -10,7 +10,7 @@ class task():
 	urgency: int = field(default=1)
 	progress: str = field(default="in progress")
 	deadline_date = None # will not be saved but compute
-	smart_urgency = 0 # will not be saved but compute as it changes
+	smart_urgency: int = field(init=False) # will not be saved but compute as it changes
 	save_attributes = ["title", "description", "deadline_timestamp", "urgency", "progress"] # stores attributes to be saved
 
 	def __post_init__(self):
