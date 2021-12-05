@@ -28,7 +28,7 @@ def main():
 			_agenda.save_agenda()
 			break
 		elif option == 1:
-			[print(f) for f in _agenda.__str__()] if len(_agenda.tasks) != 0 else print("no tasks present")
+			_agenda.table() if len(_agenda.tasks) != 0 else print("no tasks present")
 		elif option == 2:
 			_agenda.add_task()
 		elif option == 3:
