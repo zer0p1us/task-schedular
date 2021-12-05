@@ -18,7 +18,7 @@ class task():
 
 	def save_format(self):
 		"""return dict of attributes for save format"""
-		return {"title": self.title, "description": self.description, "deadline": self.deadline, "urgency": self.urgency, "smart_urgency": self.smart_urgency_calc()}
+		return {"title": self.title, "description": self.description, "deadline": self.deadline, "urgency": self.urgency, "progress": self.progress}
 
 	def smart_urgency_calc(self) -> int:
 		"""calculates the urgency of a task based on time till deadline and urgency value"""
