@@ -11,6 +11,21 @@ class task():
 	progress: str = field(default="in progress")
 	fields = ["title", "description", "deadline", "urgency", "progress"] # stores attributes to be saved
 
+	def __post_init__(self):
+		# attribute sanitation
+
+		# make sure urgency is not empty
+		if not self.urgency:
+			self.urgency = 1
+		self.smart_urgency = self.smart_urgency_calc()
+
+		# convert string types from save files to appropriate types
+		try:
+			self.deadline = int(self.deadline)
+			self.urgency = int(self.urgency)
+		except TypeError:
+			print("incorrect data types have been set in ")
+
 
 	def __str__(self):
 		"""return task data"""
