@@ -19,7 +19,7 @@ class agenda():
 			title = input("please enter a task title: "),
 			description = input("please enter a task description: "),
 			deadline = deadline,
-			urgency = int(input("please enter a task urgency level (0-4), lower level is higher urgency: "))))
+				urgency = input("please enter a task urgency level (0-4), lower level is higher urgency: ")))
 		pass
 
 
