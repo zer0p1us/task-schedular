@@ -17,8 +17,6 @@ class agenda():
 		"""add new task to agenda"""
 		if task_values != []:
 			self.tasks.append(task(*task_values))
-			# map(lambda p: self.tasks.append(task(p, p, )), task_values)
-			pass
 		else:
 			deadline = util.date_parcing()
 			self.tasks.append(task(
