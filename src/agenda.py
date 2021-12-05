@@ -22,9 +22,6 @@ class agenda():
 			urgency = int(input("please enter a task urgency level (0-4), lower level is higher urgency: "))))
 		pass
 
-	def get_tasks(self) -> task:
-		"""return tasks array"""
-		return self.tasks
 
 	def __str__(self):
 		"""return tasks in agenda"""
