@@ -9,7 +9,7 @@ class task():
 	deadline: int = field(default="none")
 	urgency: int = field(default=1)
 	progress: str = field(default="in progress")
-	fields = ["title", "description", "deadline", "urgency", "smart_urgency"]
+	fields = ["title", "description", "deadline", "urgency", "progress"] # stores attributes to be saved
 
 
 	def __str__(self):
