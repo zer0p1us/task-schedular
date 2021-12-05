@@ -52,3 +52,9 @@ class agenda():
 					self.add_task(dict(line).values())
 		except FileNotFoundError:
 			print("not valid agenda.csv files were found, new agenda.csv file will be created with the new tasks")
+
+	def table(self):
+		print ("{:^8} {:^8} {:^20} {:^20} {:^10} {:^10}".format("index", "title", "description", "deadline", "urgency", "progress"))
+		for index, task_attributes in enumerate(self.tasks):
+			print ("{:^8} {:^8} {:^20} {:^20} {:^10} {:^10}".format(index, task_attributes.title, task_attributes.description, str(task_attributes.deadline_date), task_attributes.urgency, task_attributes.progress))
+			pass
