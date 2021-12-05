@@ -7,7 +7,7 @@ class task():
 	title: str = field(default="none")
 	description: str = field(default="none")
 	deadline: int = field(default="none")
-	urgency: int = field(default=0)
+	urgency: int = field(default=1)
 	progress: str = field(default="in progress")
 	fields = ["title", "description", "deadline", "urgency", "smart_urgency"]
 
