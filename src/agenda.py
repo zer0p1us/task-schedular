@@ -50,3 +50,5 @@ class agenda():
 				for line in agenda_file:
 					print(dict(line).values())
 					self.add_task(dict(line).values())
+		except FileNotFoundError:
+			print("not valid agenda.csv files were found, new agenda.csv file will be created with the new tasks")
