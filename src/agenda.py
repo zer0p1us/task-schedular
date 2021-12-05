@@ -18,11 +18,11 @@ class agenda():
 		if task_values != []:
 			self.tasks.append(task(*task_values))
 		else:
-			deadline = util.date_parcing()
+			# deadline = util.date_parcing()
 			self.tasks.append(task(
 				title = input("please enter a task title: "),
 				description = input("please enter a task description: "),
-				deadline_timestamp = deadline,
+				deadline_timestamp = util.date_parcing(),
 				urgency = input("please enter a task urgency level (0-4), lower level is higher urgency: ")))
 		self.order_tasks()
 
