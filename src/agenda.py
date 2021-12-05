@@ -11,6 +11,7 @@ class agenda():
 			self.tasks = list()
 		else:
 			self.tasks = tasks
+		self.load_agenda()
 
 	def add_task(self, task_values=[]):
 		"""add new task to agenda"""
@@ -42,6 +43,10 @@ class agenda():
 		except:
 			print("could not write file for unknown reasons")
 
-	def load_agenda(self, file_name):
-		file = open(file_name)
-		return file
+	def load_agenda(self, file_name="agenda.csv"):
+		try:
+			with open(file_name, "r") as csv_file:
+				agenda_file = csv.DictReader(csv_file)
+				for line in agenda_file:
+					print(dict(line).values())
+					self.add_task(dict(line).values())
