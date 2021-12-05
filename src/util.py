@@ -7,9 +7,7 @@ class util:
 	def date_parcing() -> int:
 		"""take user input and return timestamp"""
 		try:
-			raw_date = input("please enter the date (dd/mm/yyyy): ")
-			day, month, year = map(int, raw_date.split('/'))
-			raw_hour = input("please enter the hour (hh:mm): ")
+			day, month, year = map(int, input("please enter the date (dd/mm/yyyy): ").split('/'))
 		except ValueError:
 			print("Error: the date entered is invalid, the deadline will be provisionally set to current time, please update in duetime")
 			return datetime.now().timestamp()
