@@ -20,13 +20,13 @@ class agenda():
 			# map(lambda p: self.tasks.append(task(p, p, )), task_values)
 			pass
 		else:
-		deadline = util.date_parcing()
-		self.tasks.append(task(
-			title = input("please enter a task title: "),
-			description = input("please enter a task description: "),
-			deadline = deadline,
+			deadline = util.date_parcing()
+			self.tasks.append(task(
+				title = input("please enter a task title: "),
+				description = input("please enter a task description: "),
+				deadline = deadline,
 				urgency = input("please enter a task urgency level (0-4), lower level is higher urgency: ")))
-		pass
+			pass
 
 
 	def __str__(self):
@@ -35,11 +35,11 @@ class agenda():
 
 	def save_agenda(self, file_path="agenda.csv"):
 		try:
-		with open(file_path, "w")as csv_file:
+			with open(file_path, "w")as csv_file:
 				agenda_file = csv.DictWriter(csv_file, fieldnames=task.save_attributes, delimiter=',', lineterminator='\r')
-			agenda_file.writeheader()
-			agenda_file.writerows([f.save_format() for f in self.tasks])
-			csv_file.close()
+				agenda_file.writeheader()
+				agenda_file.writerows([f.save_format() for f in self.tasks])
+				csv_file.close()
 		except:
 			print("could not write file for unknown reasons")
 
