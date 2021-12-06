@@ -42,7 +42,6 @@ class task():
 	def smart_urgency_calc(self) -> int:
 		"""calculates the urgency of a task based on time till deadline and urgency value"""
 		try:
-			return (int(self.urgency) * (int(self.deadline_timestamp) / datetime.now().timestamp()))
+			self.smart_urgency = (int(self.urgency) * (int(self.deadline_timestamp) / datetime.now().timestamp()))
 		except:
 			print("failed to calculate smart urgency")
-			return 0
