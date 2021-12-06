@@ -26,6 +26,29 @@ class agenda():
 				urgency = input("please enter a task urgency level (0-4), lower level is higher urgency: ")))
 		self.order_tasks()
 
+	def update_task(self, index):
+		"""used to updated the task at the given index"""
+		if not self.tasks:
+			print("Error: agenda is empty")
+		else:
+			temp_task = self.tasks[index]
+			temp_task.title = util.get_task_input(temp_task.title, "please enter a task title: ")
+			temp_task.description = util.get_task_input(temp_task.description, "please enter a task description: ")
+			temp_task.deadline_timestamp = int(
+				util.get_task_input(
+					temp_task.deadline_timestamp,
+					"please enter the date (dd/mm/yyyy): ",
+					date_func = util.date_parcing
+					)
+				)
+			temp_task.urgency = int(
+				util.get_task_input(
+					temp_task.urgency,
+					"please enter a task urgency level (0-4), lower level is higher urgency: "
+					)
+				)
+			self.tasks[index] = temp_task
+			self.order_tasks()
 	def order_tasks(self):
 		"""order task list according to smart_urgency of each task"""
 		self.tasks = sorted(self.tasks, key=operator.attrgetter("smart_urgency"), reverse=True)
