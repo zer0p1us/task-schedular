@@ -33,7 +33,8 @@ def main():
 		elif option == 2:
 			_agenda.add_task()
 		elif option == 3:
-			print(_agenda.__str__())
+			_agenda.table() if len(_agenda.tasks) != 0 else print("no tasks present")
+			_agenda.update_task(int(input("please select the index of the task to update: ")))
 		else:
 			print(f"option {option} is not available, please chose from the available menu")
 	pass
