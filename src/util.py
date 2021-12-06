@@ -25,8 +25,12 @@ class util:
 			new_text = input(input_text)
 			return original_value if not new_text else new_text
 		else:
-			update_deadline = input("Would you like to update the deadline (y/n): ")
-			if update_deadline == 'y':
-				return date_func()
-			elif update_deadline == 'n':
+			try:
+				update_deadline = input("Would you like to update the deadline (y/n): ")
+				if update_deadline == 'y':
+					return date_func()
+				elif update_deadline == 'n':
+					return original_value
+			except TypeError:
+				print("invalid option, deadline will remain unchained")
 				return original_value
