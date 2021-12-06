@@ -25,8 +25,8 @@ class task():
 		try:
 			self.deadline_timestamp = int(self.deadline_timestamp)
 			self.urgency = int(self.urgency)
-		except TypeError:
-			print("incorrect data types have been set in ")
+		except:
+			print("incorrect data types have been set")
 
 		# compute deadline date
 		self.deadline_date = datetime.fromtimestamp(self.deadline_timestamp)
