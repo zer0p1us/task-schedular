@@ -1,7 +1,7 @@
 from dataclasses import dataclass, field
 from task import task
 import csv
-from util import *
+from util import util
 import operator
 class agenda():
 	tasks = []
@@ -51,6 +51,7 @@ class agenda():
 			self.order_tasks()
 	def order_tasks(self):
 		"""order task list according to smart_urgency of each task"""
+		[f.smart_urgency_calc() for f in self.tasks]
 		self.tasks = sorted(self.tasks, key=operator.attrgetter("smart_urgency"), reverse=True)
 
 	def __str__(self):
