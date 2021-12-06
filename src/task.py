@@ -27,6 +27,8 @@ class task():
 			self.urgency = int(self.urgency)
 		except:
 			print("incorrect data types have been set")
+			self.deadline_timestamp = datetime.now().timestamp()
+			self.urgency = 1
 
 		# compute deadline date
 		self.deadline_date = datetime.fromtimestamp(self.deadline_timestamp)
@@ -45,3 +47,4 @@ class task():
 			self.smart_urgency = (int(self.urgency) * (int(self.deadline_timestamp) / datetime.now().timestamp()))
 		except:
 			print("failed to calculate smart urgency")
+			self.smart_urgency = 1
