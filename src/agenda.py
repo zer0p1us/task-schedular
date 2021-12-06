@@ -18,7 +18,6 @@ class agenda():
 		if task_values != []:
 			self.tasks.append(task(*task_values))
 		else:
-			# deadline = util.date_parcing()
 			self.tasks.append(task(
 				title = input("please enter a task title: "),
 				description = input("please enter a task description: "),
