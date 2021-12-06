@@ -34,7 +34,10 @@ def main():
 			_agenda.add_task()
 		elif option == 3:
 			_agenda.table() if len(_agenda.tasks) != 0 else print("no tasks present")
-			_agenda.update_task(int(input("please select the index of the task to update: ")))
+			try:
+				_agenda.update_task(int(input("please select the index of the task to update: ")))
+			except ValueError:
+				print("the index entered is invalid")
 		else:
 			print(f"option {option} is not available, please chose from the available menu")
 	pass
