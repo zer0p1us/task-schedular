@@ -23,7 +23,7 @@ class agenda():
 				title = input("please enter a task title: "),
 				description = input("please enter a task description: "),
 				deadline_timestamp = util.date_parcing(),
-				urgency = input("please enter a task urgency level (0-4), lower level is higher urgency: ")))
+				urgency = input("please enter a task urgency level (1-4), lower level is higher urgency: ")))
 		self.order_tasks()
 
 	def update_task(self, index):
@@ -44,7 +44,7 @@ class agenda():
 			temp_task.urgency = int(
 				util.get_task_input(
 					temp_task.urgency,
-					"please enter a task urgency level (0-4), lower level is higher urgency: "
+					"please enter a task urgency level (1-4), lower level is higher urgency: "
 					)
 				)
 			self.tasks[index] = temp_task
