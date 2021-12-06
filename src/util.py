@@ -17,3 +17,16 @@ class util:
 		else:
 			hour, minute = map(int, raw_hour.split(':'))
 			return int(datetime(year=year, month=month, day=day, hour=hour, minute=minute).timestamp())
+
+	@staticmethod
+	def get_task_input(original_value, input_text, date_func=None):
+		"""take input from user, if user input is null original_value will be returned"""
+		if not date_func:
+			new_text = input(input_text)
+			return original_value if not new_text else new_text
+		else:
+			update_deadline = input("Would you like to update the deadline (y/n): ")
+			if update_deadline == 'y':
+				return date_func()
+			elif update_deadline == 'n':
+				return original_value
