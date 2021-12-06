@@ -21,7 +21,7 @@ def main():
 				print("Please select one of the options")
 			# input is not integer
 			else:
-				print("Please select an interger option")
+				print("Please select an integer option")
 			continue
 
 
