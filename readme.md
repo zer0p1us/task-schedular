@@ -1,5 +1,7 @@
 # Task Scheduler
 
+Python 3.10.0
+
 Program to schedule tasks, end of first term of CS at NTU python project
 
 todo:
