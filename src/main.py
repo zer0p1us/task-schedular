@@ -26,6 +26,7 @@ def main():
 
 		match option:
 			case 0:
+				print("Quiting!")
 				_agenda.save_agenda()
 				break
 			case 1:
